@@ -14,6 +14,8 @@
 
 ?>
 
+
+
     <div class="form-group email">
       <label for="email">Email </label>
       <input type="text" name="email" id="email" placeholder="Entere email ">

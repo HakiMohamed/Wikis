@@ -78,6 +78,8 @@ foreach($errors as $error){
       event.preventDefault();
       validateForm();
     });
+
+    
   
     const inputFields = form.querySelectorAll('input[type="text"], input[type="password"]');
     inputFields.forEach(function(inputField) {

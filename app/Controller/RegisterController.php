@@ -64,6 +64,8 @@ class RegisterController {
                 include_once('../app/View/register.php');
 
                     return $errors;
+
+                    
                     
 
 
