@@ -1,73 +1,54 @@
-<?php 
-
-
+<?php
 namespace App\Model;
-use App\Database\Database;
+
 use PDO;
+use PDOException;
 
 class UserModel {
-    private $connexion;
+    private $conn;
 
-    public function __construct(Database $db) {
-        $this->connexion = $db->getConnection();
+    public function __construct($db) {
+        $this->conn = $db;
     }
 
-    public function getUsersWithRoles() {
-        $query = "SELECT users.*, roles.role_name 
-                  FROM users 
-                  LEFT JOIN roles ON users.role_id = roles.id";
-        $statement = $this->connexion->prepare($query);
-        $statement->execute();
+    public function createUser($first_name, $last_name, $email,$image, $password, $role) {
+        try {
+            $query = "INSERT INTO `utilisateur`(`first_name`, `last_name`, `email`, `profilPic`, `password`, `role`)  VALUES (:first_name, :last_name, :email, :profilPic, :password, :role)";
+            $stmt = $this->conn->prepare($query);
 
-        return $statement->fetchAll(PDO::FETCH_OBJ);
-    }
+            $stmt->bindParam(':first_name', $first_name);
+            $stmt->bindParam(':last_name', $last_name);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':profilPic', $image);
+            $stmt->bindParam(':password', $password);
+            $stmt->bindParam(':role', $role);
 
-
-
-    public function supprimerUtilisateur($userId) {
-        $query = "DELETE FROM users WHERE id = :user_id";
-        $statement = $this->connexion->prepare($query);
-        $statement->bindParam(':user_id', $userId);
-        $statement->execute();
-    }
-
-
-
-
-    
-    
-    public function modifierUtilisateur($userId, $nouveauRoleId) {
-        $query = "UPDATE users SET role_id = $nouveauRoleId WHERE users.id = $userId";
-        $statement = $this->connexion->prepare($query);
-        $statement->execute();
+            $stmt->execute();
+            
+            return true; 
+        } catch(PDOException $e) {
+            return false;
+        }
     }
 
 
-    public function SearchUtilisateur($key_search) {
-        $query = "SELECT * 
-        FROM users
-        LEFT JOIN roles ON users.role_id = roles.id
-        WHERE last_name LIKE $key_search.'%' OR first_name LIKE $key_search.'%';";
-        $statement = $this->connexion->prepare($query);
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_OBJ);
-    }
 
-    
-    
-    
-    
+
+    public function login($email, $password) {
+        $query = "SELECT * FROM utilisateur WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+        if ($user) {
+            if (password_verify($password, $user->password)) {
+                return $user;
+            }
+        }
+
+        return false;
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
 ?>

@@ -7,7 +7,7 @@ class Database {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-    private $database = "youevent";
+    private $database = "wikis";
     private $conn;
 
     public function __construct() {

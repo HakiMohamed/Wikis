@@ -135,53 +135,7 @@
     </symbol>
   </svg>
 
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-        <use href="#circle-half"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          aria-pressed="true">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#circle-half"></use>
-          </svg>
-          Auto
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </div>
+  
 
 
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -301,15 +255,17 @@
 
 
 
-
-      <div class="container">
-  <h4 class="mb-5 mt-2">statistiques </h4>
+      <div class="bg-success d-flex justify-content-center ">
+  <h3 class="mb-5 mt-2 ">statistiques </h3>
+  </div>
+      <div class="container ">
+       
   
   <div class="row">
   
     
 
-    <div class="container col-6 text-center mt-3">
+    <div class="container col-6 text-center mt-3 ">
         <div class="card">
             <div class="card-header">
                 Nombre d'utilisateurs
@@ -317,7 +273,7 @@
             <div class="card-body">
                 <h5 class="card-title">
                     <?php
-                    echo $Countusers; 
+                   echo"<h4> $Countusers </h4>"; 
                     ?>
                 </h5>
             </div>
@@ -332,7 +288,7 @@
             <div class="card-body">
                 <h5 class="card-title">
                     <?php
-                    echo $Countevents; 
+                    echo"<h4> $Countevents </h4>";  
                     ?>
                 </h5>
             </div>
@@ -348,7 +304,8 @@
             <div class="card-body">
                 <h5 class="card-title">
                     <?php
-                    echo  $Counttickets; 
+                   
+                    echo"<h4> $Counttickets </h4>";  
                     ?>
                 </h5>
             </div>
@@ -363,7 +320,8 @@
             <div class="card-body">
                 <h5 class="card-title">
                     <?php
-                    echo $Countreservations; 
+                     
+                    echo"<h4> $Countreservations </h4>";
                     ?>
                 </h5>
             </div>
