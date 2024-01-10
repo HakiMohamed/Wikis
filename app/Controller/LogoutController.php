@@ -5,6 +5,7 @@ class LogoutController {
     public function index() {
         
         
+        
         $_SESSION = [];
         
         session_destroy();

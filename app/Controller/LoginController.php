@@ -4,6 +4,7 @@ use App\Database\Database;
 use App\Model\UserModel;
 
 class LoginController {
+    
     private $db;
     
     public function __construct() {
