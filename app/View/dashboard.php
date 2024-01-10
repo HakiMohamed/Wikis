@@ -138,41 +138,7 @@
     </symbol>
   </svg>
 
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-        <use href="#circle-half"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-            <use href="#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </div>
+  
 
 
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -206,7 +172,7 @@
     
     
 
-    <div id="SidebarID" class="position-relative d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar " >
+    <div id="SidebarID" class="position-relative d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar data-scrollbar='true'" data-height="100%" style="height: 100%;" data-init="true " >
 
       <span style="right: 10px; top: 2px; " class="position-absolute  ">
         <button class="btn" onclick="toggleSidebar()">
@@ -250,7 +216,7 @@
       <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
           data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="./assets/imgs/mohamed.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+          <img src="./asset/images/download.png" alt="" width="32" height="32" class="rounded-circle me-2">
           <strong class="sidebarText">Mohamed Haki</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -265,9 +231,9 @@
       </div>
     </div>
 
-    <div class="b-example-divider b-example-vr "></div>
+    <div class="b-example-divider b-example-vr " data-scrollbar="true" data-height="100%" style="height: 100%;" data-init="true"></div>
 
-    <section style="width: 100%">
+    <section style="width:100% ;">
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid   justify-content-md-between ">
           <a href="#" class="navbar-brand">
@@ -290,11 +256,12 @@
 
   
 
-
+      <div class="bg-success d-flex justify-content-center mb-3 container mt-3 ">
+  <h3 class="mb-5 mt-2 ">Liste des utilisateurs </h3>
+  </div>
 
 
       <div class="container">
-  <h4 class="mb-5 mt-2">Liste des utilisateurs</h4>
 
 
 
