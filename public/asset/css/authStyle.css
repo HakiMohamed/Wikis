@@ -106,3 +106,13 @@ form .password i {
 .submit-btn input:hover {
   background: #179b81;
 }
+
+
+.invalid{
+  border: 3px solid red;
+}
+
+.valid {
+  border: 3px solid green;
+}
+

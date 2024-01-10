@@ -44,6 +44,7 @@ class Router {
             }
         }
 
+
         $object = new $this->controller;
 
         if (isset($uri[2])) {
