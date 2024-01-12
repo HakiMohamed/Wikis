@@ -24,13 +24,13 @@ foreach($errors as $error){
 ?>
 
     <div class="form-group firstname">
-      <label for="firstname">first_name</label>
+      <label for="firstname">first name</label>
       <input type="text" id="firstname" placeholder="First name " name="first_name">
       <small class="error-text"></small>
     </div>
 
     <div class="form-group lastname">
-      <label for="lastname">Last_name</label>
+      <label for="lastname">Last name</label>
       <input type="text" id="lastname" placeholder="Last name " name="last_name">
       <small class="error-text"></small>
     </div>
@@ -62,8 +62,11 @@ foreach($errors as $error){
     <div class="form-group submit-btn">
       <input type="submit" value="register">
     </div>
+
     <p>avez vous un compte
-    <a class="btn btn-light text-primary" href="?uri=/login">login</a>
+    <a class="btn btn-light text-primary" href="http://localhost/wikis/login">login</a>
+    Ou returner
+    <a class="btn btn-light text-primary" href="http://localhost/wikis/Home">Home</a>
     
   </p>
   </form>
@@ -79,7 +82,7 @@ foreach($errors as $error){
       validateForm();
     });
 
-    
+
   
     const inputFields = form.querySelectorAll('input[type="text"], input[type="password"]');
     inputFields.forEach(function(inputField) {

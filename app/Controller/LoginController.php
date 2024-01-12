@@ -26,12 +26,13 @@ class LoginController {
                 $_SESSION['first_name']=$user->first_name;
                 $_SESSION['last_name']=$user->last_name;
                 $_SESSION['role']=$user->role;
+                $_SESSION['profilPic']=$user->profilPic;
               
                 if ($_SESSION['role'] === 'auteur') {
                     header('Location: Home'); 
                     exit();
                 } elseif ($_SESSION['role'] === 'admin') {
-                    header('Location: dashboard'); 
+                    header('location:http://localhost/wikis/dachboard');
                     exit();
                 }
 
