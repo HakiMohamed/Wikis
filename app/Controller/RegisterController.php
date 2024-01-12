@@ -40,9 +40,9 @@ class RegisterController {
 
             
 
-            $allowed_types = ['jpg', 'jpeg', 'png', 'gif'];
+            $allowed_types = ['jpg', 'jpeg', 'png'];
             if (!in_array($imageFileType, $allowed_types)) {
-                $errors[] = "Seuls les fichiers JPG, JPEG, PNG et GIF sont autorisés.";
+                $errors[] = "Seuls les fichiers JPG, JPEG, PNG sont autorisés.";
             }
 
             if (empty($errors)) {
@@ -58,14 +58,14 @@ class RegisterController {
 
                 $userModel->createUser($prenom, $nom, $email, $image, $password, $role);
                 
-                header("Location: ?uri=/login");
+                header("Location: http://localhost/wikis/login");
                 exit();
             } else {
                 include_once('../app/View/register.php');
 
                     return $errors;
 
-                    
+
                     
 
 
@@ -77,4 +77,25 @@ class RegisterController {
     }
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

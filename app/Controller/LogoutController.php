@@ -6,11 +6,10 @@ class LogoutController {
         
         
         
-        $_SESSION = [];
         
         session_destroy();
         
-        header("Location: ?uri=/login");
+        header("Location:http://localhost/wikis/Home");
         exit();
     }
 }

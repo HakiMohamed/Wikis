@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" data-bs-theme="dark">
 
 <head>
   <script src="./asset/js/color-modes.js"></script>
@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.118.2">
-  <title>Home Page </title>
+  <title>Dashboard</title>
   <link rel="shortcut icon" href="./assets/imgs/Sans titre.png" type="image/x-icon">
   <link rel="stylesheet" href="./asset/bootstrap-icons-1.11.1/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -114,7 +114,7 @@
   <link rel="stylesheet" href="./asset/css/Mystyle.css">
 </head>
 
-<body>
+<body >
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
       <path
@@ -165,7 +165,7 @@
     </symbol>
   </svg>
 
-  <main class="d-flex flex-nowrap">
+  <main class="d-flex flex-nowrap" >
     
     
 
@@ -193,9 +193,9 @@
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#home" />
             </svg>
-            <span class="sidebarText">Home</span>
+            <span class="sidebarText">Dashboard</span>
             
-          </a>
+          </a> 
         </li>
         
         
@@ -208,6 +208,8 @@
             
           </a>
         </li>
+
+        
       </ul>
       <hr>
       <div class="dropdown">
@@ -228,10 +230,10 @@
       </div>
     </div>
 
-    <div class="b-example-divider b-example-vr"></div>
+    <div class="b-example-divider b-example-vr" ></div>
 
-    <section style="width:100%;">
-      <nav class="navbar bg-body-tertiary">
+    <section style="width:100%;"   >
+      <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid   justify-content-md-between ">
           <a href="#" class="navbar-brand">
 
@@ -255,17 +257,15 @@
 
 
 
-      <div class="bg-success d-flex justify-content-center ">
-  <h3 class="mb-5 mt-2 ">statistiques </h3>
-  </div>
-      <div class="container ">
+      
+      <div class="container " >
        
   
   <div class="row">
   
     
 
-    <div class="container col-6 text-center mt-3 ">
+    <div class="container col-6 text-center mt-3 " >
         <div class="card">
             <div class="card-header">
                 Nombre d'utilisateurs

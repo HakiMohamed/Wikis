@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php include_once '../app/View/layout/head.php'; ?>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./asset/css/authStyle.css">
+</head>
 <body>
   <form action="?uri=login/index" method="POST">
     <h2>login</h2>
@@ -32,8 +39,10 @@
       
       <input type="submit" >
     </div>
-    <p>sign up 
-      <a href="?uri=/register">register</a>
+    <p>vous avez pas de compte?</p>
+      <a href="http://localhost/wikis/register">register</a>
+     <p> Ou returner 
+    <a class="btn btn-light text-primary" href="http://localhost/wikis/Home">Home</a>
     </p>
   </form>
 

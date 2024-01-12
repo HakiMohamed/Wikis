@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.118.2">
-  <title>Home Page </title>
+  <title>Dashboard</title>
   <link rel="shortcut icon" href="./assets/imgs/Sans titre.png" type="image/x-icon">
   <link rel="stylesheet" href="./asset/bootstrap-icons-1.11.1/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -48,8 +48,6 @@
     }
 
     .b-example-divider {
-        flex-grow: 1;
-        flex-shrink: 1;
       width: 100%;
       height: 3rem;
       background-color: rgba(0, 0, 0, .1);
@@ -59,10 +57,9 @@
     }
 
     .b-example-vr {
-      flex-shrink: 1;
+      flex-shrink: 0;
       width: 1.5rem;
       height: 100vh;
-      flex-grow: 1;
     }
 
     .bi {
@@ -172,7 +169,7 @@
     
     
 
-    <div id="SidebarID" class="position-relative d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar data-scrollbar='true'" data-height="100%" style="height: 100%;" data-init="true " >
+    <div id="SidebarID" class="position-relative d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar" >
 
       <span style="right: 10px; top: 2px; " class="position-absolute  ">
         <button class="btn" onclick="toggleSidebar()">
@@ -192,11 +189,11 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link active" aria-current="page">
+          <a href="http://localhost/wikis/Dashboard" class="nav-link text-white active" aria-current="page">
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#home" />
             </svg>
-            <span class="sidebarText">Home</span>
+            <span class="sidebarText">Dashboard</span>
             
           </a>
         </li>
@@ -204,7 +201,7 @@
         
         
         <li>
-          <a href="?uri=statistiques" class="nav-link text-white">
+          <a href="http://localhost/wikis/statistiques" class="nav-link text-white ">
           <i class="bi bi-graph-up-arrow"></i>
             
             <span class="sidebarText"> Statistique</span>
@@ -216,7 +213,7 @@
       <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
           data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="./asset/images/download.png" alt="" width="32" height="32" class="rounded-circle me-2">
+          <img src="./assets/imgs/mohamed.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
           <strong class="sidebarText">Mohamed Haki</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -231,10 +228,9 @@
       </div>
     </div>
 
-    <div class="b-example-divider b-example-vr " data-scrollbar="true" data-height="100%" style="height: 100%;" data-init="true"></div>
 
-    <section style="width:100% ;">
-      <nav class="navbar bg-body-tertiary">
+    <section style="width:100%;">
+      <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid   justify-content-md-between ">
           <a href="#" class="navbar-brand">
 
@@ -243,8 +239,8 @@
 
             <img src="./assets/imgs/youmed-high-resolution-logo-transparent (1).png" style="width: 200px;" alt="">
           </a>
-          <form  action="/You-event/public/Dashboard/SearchUser" method="POST" class="d-flex" role="search">
-            <input  class="form-control me-2" type="search" name="keySearch" placeholder="Search" aria-label="Search">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
@@ -256,105 +252,59 @@
 
   
 
-      <div class="bg-success d-flex justify-content-center mb-3 container mt-3 ">
-  <h3 class="mb-5 mt-2 ">Liste des utilisateurs </h3>
-  </div>
 
 
-      <div class="container">
-
-
-
-
-
-
-
-  
-  <div class="row">
-  <?php foreach ($users as $user): ?>
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-      <div class="card">
-        <img src="./asset/images/download.png" class=" card-img-top rounded-circle img-thumbnail mx-4 mt-2" alt="Image Utilisateur 1" style="width: 100px; height: 100px;">
-        <div class="card-body">
-          <h5 class="card-title"><?= $user->first_name." ".$user->last_name; ?></h5>
-  <hr>
-         
-
-          <table class="table">
-  <thead>
-    <tr>
-     
-      <th>Email</th>
-      <th>Role</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       
-      <td><?= $user->email; ?></td>
-      <td><?= $user->role_name; ?></td>
-      
-    </tr>
-   
-  </tbody>
-</table>
-
-
-
-          <div class="d-flex">
-          <form class="m-1" action="/You-event/public/Dashboard/supprimerUtilisateur/<?= $user->id; ?>" method="POST">
-                <input type="hidden" name="user_id" value="<?= $user->id; ?>">
-                <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-            </form>
-            <form class="m-1" action="/Your-event/public/Dashboard/modifierUtilisateur" method="POST">
-        <input type="hidden" name="user_id" value="<?= $user->id; ?>">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $user->id; ?>">
-        <i class="bi bi-pencil-fill"></i>
-</button>      </form>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="exampleModal<?= $user->id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel<?= $user->id; ?>">Modifier Le role de : <?= $user->first_name." ".$user->last_name; ?> </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div class="mb-3">
-            <label for="recipient-name<?= $user->id; ?>" class="col-form-label">Role:</label>
-            <input type="text" class="form-control" value="<?= $user->role_name; ?>" id="recipient-name<?= $user->id; ?>" disabled>
-            <form action="/You-event/public/Dashboard/updateUser" method="POST">
-                    <input type="hidden" name="user_id" value="<?= $user->id?>">
-                    <select class="btn btn-success btn-sm mt-1" name="new_role_id" >
-                       <option disabled selected hidden >change role</option>
-                        <option value="1">Admin</option>
-                        <option value="2">User</option>
-                        <option value="3">Manager</option>
-                        <option value="4">Guest</option>
-                        <option value="5">Moderator</option>
-                    </select>
-                    <button  class="btn btn-primary btn-sm mt-1" type="submit">Update Role</button>
-                </form>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<?php endforeach; ?>
-
-
-
-
-
+      <div class="container mt-5">
     
+
+    <h2>Wikis</h2>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Author ID</th>
+                <th>Date Created</th>
+                <th>Date Modified</th>
+                <th>Archived</th>
+                <th>ImageWiki</th>
+                <th>Author</th>
+                <th>Action</th>
+               
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($wikis as $wiki): ?>
+                <tr>
+                    <td><?= $wiki->wiki_id ?></td>
+                    <td><?= $wiki->title ?></td>
+                    <td><?= $wiki->content ?></td>
+                    <td><?= $wiki->author_id ?></td>
+                    <td><?= $wiki->date_created ?></td>
+                    <td><?= $wiki->date_modified ?></td>
+                    <td><?= $wiki->archived ?></td>
+                    <td><?= $wiki->imagewiki ?></td>
+                    <td><?= $wiki->first_name . " " . $wiki->last_name ?></td>
+                    <td>
+                        
+                        <form action="" method="POST">
+                            <input type="hidden" name="wiki_id" value="<?= $wiki->wiki_id ?>">
+                            <select name="archived" class="form-control  btn btn-bd-primary ">
+                               <option hidden  >Ac</option>
+                                <option class="btn btn-success" value="0">Désarchiver</option>
+                                <option class="btn btn-danger" value="1">Archiver</option>
+                            </select>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
      
     </section>
 
